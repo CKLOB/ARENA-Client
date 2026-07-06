@@ -46,6 +46,10 @@ src/
    - Bad: `import { LoginForm } from '@/features/login/ui/LoginForm'`
 4. **Segments inside a slice**: use only what's needed among `ui/`, `model/`, `api/`, `lib/`.
 5. No business logic in `src/app/` (Next.js routing). Implement page components in `views/` and only import them from `app/`.
+6. **`views/` is composition-only**: each view slice is a single `index.tsx` that only assembles widgets/features/entities/shared components. No business logic, no state management, no API calls, no standalone UI implementation in `views/` — anything reusable or logic-bearing lives in a lower layer and gets imported.
+   ```
+   views/signup/index.tsx   ← the whole slice: composes <SignupForm/> etc. from features
+   ```
 
 ## Commit Convention
 

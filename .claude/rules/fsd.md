@@ -7,9 +7,41 @@ paths:
 
 Layer rules (dependency direction, public API) are in CLAUDE.md. This file covers structure and naming inside slices.
 
-## Slice structure
+## views layer — composition only, one file per slice
 
-A slice contains only the segments it needs, plus a public API:
+A view slice is **exactly one file**: `views/<name>/index.tsx`. It only composes components imported from `widgets`/`features`/`entities`/`shared` and lays them out.
+
+```tsx
+// views/signup/index.tsx — the entire slice
+import { SignupForm } from '@/features/signup';
+import { PageHeader } from '@/widgets/page-header';
+
+export function SignupPage() {
+  return (
+    <main>
+      <PageHeader />
+      <SignupForm />
+    </main>
+  );
+}
+```
+
+Not allowed in `views/`:
+
+- extra files or segments (`ui/`, `model/`, `components/`, ...) — if a view needs its own component, that component belongs in `features` or `widgets`
+- business logic, state management (`useState` beyond trivial layout state), API calls, form handling
+- implementing UI primitives inline — import them from `shared/ui`
+
+The matching `app/` route only re-exports the view:
+
+```tsx
+// app/signup/page.tsx
+export { SignupPage as default } from '@/views/signup';
+```
+
+## Slice structure (widgets / features / entities)
+
+Slices in these layers contain only the segments they need, plus a public API (`views` is the single-file exception above):
 
 ```
 features/login/

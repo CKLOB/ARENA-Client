@@ -38,11 +38,20 @@ Importing another slice's internal files directly (bypassing `index.ts`).
 - Bad: `@/features/login/ui/LoginForm`
 - Good: `@/features/login`
 
-### 4. Bloated app layer (warning)
+### 4. views layer violations (critical)
+
+`views/` slices must be composition-only, exactly one `index.tsx` per slice.
+
+- A view slice containing any file other than `index.tsx` (extra components, `ui/`, `model/` segments)
+- Business logic inside a view: API calls (`fetch`, api client usage), form handling, non-trivial `useState`/`useReducer`, custom hooks defined in the view
+- UI implemented inline that should come from `shared/ui`/`features`/`widgets`
+- Suggested fix: move the component/logic down to `features`, `widgets`, or `shared` and import it.
+
+### 5. Bloated app layer (warning)
 
 Business logic or complex components implemented directly in `src/app/` (Next.js routing). Page implementations belong in `views/`; `app/` should only re-export. (`layout.tsx`, `globals.css`, and metadata definitions are exempt.)
 
-### 5. Missing index.ts in a slice (info)
+### 6. Missing index.ts in a slice (info)
 
 A slice directory under `views/widgets/features/entities` lacking a public API (`index.ts`).
 
