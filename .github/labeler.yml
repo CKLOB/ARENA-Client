@@ -1,0 +1,46 @@
+app:
+  - changed-files:
+      - any-glob-to-any-file: 'src/app/**'
+
+views:
+  - changed-files:
+      - any-glob-to-any-file: 'src/views/**'
+
+widgets:
+  - changed-files:
+      - any-glob-to-any-file: 'src/widgets/**'
+
+features:
+  - changed-files:
+      - any-glob-to-any-file: 'src/features/**'
+
+entities:
+  - changed-files:
+      - any-glob-to-any-file: 'src/entities/**'
+
+shared:
+  - changed-files:
+      - any-glob-to-any-file: 'src/shared/**'
+
+tests:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.test.{ts,tsx}'
+          - 'e2e/**'
+          - 'vitest.config.ts'
+          - 'vitest.setup.ts'
+          - 'playwright.config.ts'
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file: '.github/**'
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'package.json'
+          - 'package-lock.json'
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: '**/*.md'

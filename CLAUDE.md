@@ -6,15 +6,15 @@ Follows **FSD (Feature-Sliced Design)** architecture.
 
 ## Commands
 
-| Task              | Command                           |
-| ----------------- | --------------------------------- |
-| Dev server        | `npm run dev`                     |
-| Build             | `npm run build`                   |
-| Lint              | `npm run lint`                    |
-| Format            | `npm run format` / `format:check` |
-| Type check        | `npx tsc --noEmit`                |
-| Unit tests        | `npm run test` (single run)       |
-| Unit tests (watch)| `npm run test:watch`              |
+| Task               | Command                           |
+| ------------------ | --------------------------------- |
+| Dev server         | `npm run dev`                     |
+| Build              | `npm run build`                   |
+| Lint               | `npm run lint`                    |
+| Format             | `npm run format` / `format:check` |
+| Type check         | `npx tsc --noEmit`                |
+| Unit tests         | `npm run test` (single run)       |
+| Unit tests (watch) | `npm run test:watch`              |
 
 - Node >= 20.9.0, path alias `@/*` → `./src/*`
 - The pre-commit hook (husky) runs ESLint/Prettier via lint-staged automatically.
