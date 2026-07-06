@@ -8,6 +8,13 @@ updates:
     groups:
       dev-dependencies:
         dependency-type: 'development'
+      react:
+        patterns:
+          - 'react'
+          - 'react-dom'
+    ignore:
+      - dependency-name: 'eslint'
+        update-types: ['version-update:semver-major']
     open-pull-requests-limit: 10
 
   - package-ecosystem: 'github-actions'
