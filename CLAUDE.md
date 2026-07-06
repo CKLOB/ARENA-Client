@@ -66,3 +66,13 @@ Format: `type: 짧은 한글 설명` — a single short subject line in Korean, 
 
 - Unit tests are colocated next to their target file as `*.test.tsx` (e.g. `page.test.tsx`)
 - Testing Library + jsdom environment; E2E tests live in `e2e/` (Playwright)
+
+## Rules
+
+Detailed conventions live in `.claude/rules/` and load automatically per file pattern:
+
+- `typescript.md` — strict typing rules (no `any`, no `as`, no `enum`, ...)
+- `react.md` — Server Components first, component structure, Next.js primitives
+- `styling.md` — Tailwind 4 token usage, no hardcoded values
+- `testing.md` — Vitest/Testing Library and Playwright conventions
+- `fsd.md` — slice structure, naming, layer placement heuristics
