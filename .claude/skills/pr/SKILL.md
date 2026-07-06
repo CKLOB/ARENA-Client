@@ -21,14 +21,15 @@ Create a Pull Request from the commits on the current branch.
 
 Write the body in **Korean**, keeping the template's structure, headings, and emoji exactly as-is:
 
-- `## 💡 PR 요약` — bullet summary of the changes and related issue. Link the issue (`#번호`) if one exists.
-- `## 📋 작업 내용` — detailed description of what was done. For UI changes, ask the user to attach screenshots.
-- `## 🤝 리뷰 시 참고사항` — things reviewers should know: design decisions, open questions, areas needing careful review.
+- `## 💡 배경 및 개요` — problem context and why this PR exists. Keep the `Resolves: #이슈번호` line with the real issue number (remove the line if there's no issue). For UI work, ask the user to attach screenshots/videos.
+- `## 📃 작업내용` — what was done in this PR, as concrete bullets.
+- `## 🙋‍♂️ 리뷰노트` — design decisions, trade-offs, open questions, and spots that deserve focused review.
+- `## ✅ PR 체크리스트` — keep the checklist items. Check (`[x]`) only items actually verified; leave unverified items unchecked and mention why in 리뷰노트. Add extra project-specific checks when relevant.
+- `## 🎸 기타` — anything that doesn't fit above; delete the section if empty.
 
 Additional rules:
 
-- Do not add, rename, or reorder sections. Do not leave the template's placeholder/guide text (`> ...`, `{변경사항}`) in the final body.
-- Delete sections that have nothing to write, per the template's own instruction ("작성하지 않은 부분은 삭제해주세요").
+- Do not add, rename, or reorder sections. Do not leave the template's placeholder/guide text (`> ...`, `#{이슈번호}`) in the final body.
 - Append at the end of the body: `🤖 Generated with [Claude Code](https://claude.com/claude-code)`
 
 ## Cautions
