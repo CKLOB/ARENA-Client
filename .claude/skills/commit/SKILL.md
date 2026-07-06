@@ -40,6 +40,6 @@ Examples:
 ## Cautions
 
 - If the pre-commit hook (lint-staged) fails, fix the cause and commit again. Never bypass with `--no-verify`.
-- Before committing code changes, verify there are no type errors with `npx tsc --noEmit`.
+- Before committing code changes, verify with `npx tsc --noEmit` and `npm run test`.
 - **Never push.** Only push when the user explicitly asks.
 - If about to commit feature work on the `main` branch, ask the user first whether to create a branch.

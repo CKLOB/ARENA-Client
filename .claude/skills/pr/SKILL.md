@@ -13,7 +13,7 @@ Create a Pull Request from the commits on the current branch.
 1. Check the current branch. If on `main`/`develop`, a PR cannot be created — tell the user and offer to create a branch.
 2. Determine the base branch: `develop` if it exists on the remote, otherwise `main`.
 3. Understand the **full branch diff** (not just the latest commit) via `git log <base>..HEAD --oneline` and `git diff <base>...HEAD --stat`.
-4. **Read `.github/PULL_REQUEST_TEMPLATE.md` first** — always base the body on the current template file, never on a memorized copy (the template may have changed).
+4. **Read `.github/PULL_REQUEST_TEMPLATE.md` first** — always base the body on the current template file, never on a memorized copy (the template may have changed). If the file doesn't exist, use the section structure below.
 5. If a push is needed, **ask the user first**. Never push without consent.
 6. Create the PR with `gh pr create`. Title follows the commit convention: `type: 짧은 한글 설명`.
 
@@ -33,5 +33,5 @@ Additional rules:
 
 ## Cautions
 
-- Before creating the PR, verify CI will pass locally: `npm run lint`, `npx tsc --noEmit`, `npm run test -- run`.
+- Before creating the PR, verify locally: `npm run lint`, `npm run format:check`, `npx tsc --noEmit`, `npm run test`, `npm run build`.
 - Share the PR URL with the user after creation.

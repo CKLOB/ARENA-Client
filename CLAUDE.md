@@ -1,20 +1,20 @@
 # ARENA-Client
 
 Frontend built with Next.js 16 (App Router) + React 19 + TypeScript + Tailwind CSS 4.
+Server state via TanStack Query, schema validation via Zod.
 Follows **FSD (Feature-Sliced Design)** architecture.
 
 ## Commands
 
-| Task           | Command                              |
-| -------------- | ------------------------------------ |
-| Dev server     | `npm run dev`                        |
-| Build          | `npm run build`                      |
-| Lint           | `npm run lint`                       |
-| Format         | `npm run format` / `format:check`    |
-| Type check     | `npx tsc --noEmit`                   |
-| Unit tests     | `npm run test -- run` (no watch)     |
-| Unit test UI   | `npm run test:ui`                    |
-| E2E tests      | `npm run e2e` (Playwright)           |
+| Task              | Command                           |
+| ----------------- | --------------------------------- |
+| Dev server        | `npm run dev`                     |
+| Build             | `npm run build`                   |
+| Lint              | `npm run lint`                    |
+| Format            | `npm run format` / `format:check` |
+| Type check        | `npx tsc --noEmit`                |
+| Unit tests        | `npm run test` (single run)       |
+| Unit tests (watch)| `npm run test:watch`              |
 
 - Node >= 20.9.0, path alias `@/*` → `./src/*`
 - The pre-commit hook (husky) runs ESLint/Prettier via lint-staged automatically.
@@ -63,13 +63,13 @@ Format: `type: 짧은 한글 설명` — a single short subject line in Korean, 
 ## PR Convention
 
 - Base branch: `develop` (fall back to `main` if absent)
-- **The PR template is mandatory**: always read `.github/PULL_REQUEST_TEMPLATE.md` and follow its structure exactly, written in Korean. Fill every applicable section; delete sections that don't apply.
-- CI must pass: lint/format → typecheck → unit tests → build → e2e.
+- **The PR template is mandatory**: always read `.github/PULL_REQUEST_TEMPLATE.md` and follow its structure exactly, written in Korean. Fill every applicable section; delete sections that don't apply. (If the template file doesn't exist yet, use the structure in the `/pr` skill.)
+- Before opening a PR, verify locally: `npm run lint`, `npm run format:check`, `npx tsc --noEmit`, `npm run test`, `npm run build`.
 
 ## Testing
 
 - Unit tests are colocated next to their target file as `*.test.tsx` (e.g. `page.test.tsx`)
-- Testing Library + jsdom environment; E2E tests live in `e2e/` (Playwright)
+- Vitest + Testing Library, jsdom environment
 
 ## Rules
 
