@@ -39,10 +39,10 @@
     "husky": "^9.1.7",
     "jsdom": "^29.1.1",
     "lint-staged": "^17.0.8",
-    "prettier": "^3.9.4",
+    "prettier": "^3.9.5",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4",
-    "typescript": "^6",
+    "typescript": "^7",
     "vitest": "^4.1.9"
   },
   "lint-staged": {
